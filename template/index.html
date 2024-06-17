@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% block body %}
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            {% for album in all_album %}
+            <div class="col-md-4">
+            <div class="panel-group"> 
+                <div class="panel panel-default"> 
+                    <div class="panel-body">
+                    <img src="{{album.album_logo.url}}"  alt="Card image cap" class="img-responsive center-block" style="width: 50%; height: 50%;">
+                    <div class="panel-body">
+                        <a href="{% url 'detail' album.id %}"><h3 class="card-title center-block">{{album.artist}}</h3></a>
+                        <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            {%endfor%}
+        </div>
+        
+    </div>
+</section>   
+{%endblock%}
+
+
+
